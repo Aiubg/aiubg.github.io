@@ -7,14 +7,14 @@ const vitePressConfigs = defineConfig({
   description: "我的学习笔记",
   lang: "zh-CN",
   srcDir: "src",
-  base:"/Aiubg.github.io/",
+  base:"/NoteNest/",
   markdown: {
     math: true,
     image: {
       lazyLoading: true,
     },
   },
-  head: [["link", { rel: "icon", href: "/Aiubg.github.io/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/NoteNest/favicon.ico" }]],
   themeConfig:{
   },
   // 多语言配置
