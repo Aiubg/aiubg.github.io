@@ -22,9 +22,4 @@ features:
     details: 以基础内容为核心
   - title: 预测未来的最好方法，就是创造未来。
     icon: ✨
-
 ---
-<script setup>
-import Confetti from "./components/Confetti.vue";
-</script>
-<Confetti />
