@@ -7,7 +7,6 @@ const vitePressConfigs = defineConfig({
   description: "我的学习笔记",
   lang: "zh-CN",
   srcDir: "src",
-  base:"/NoteNest/",
   markdown: {
     math: true,
     image: {
@@ -24,11 +23,11 @@ const vitePressConfigs = defineConfig({
       lang: 'zh-CN',
       themeConfig:zhThemeConfig
     },
-    // en: {
-    //   label: 'English',
-    //   lang: 'en',
-    //   themeConfig:enThemeConfig
-    // }
+    en: {
+      label: 'English',
+      lang: 'en',
+      themeConfig:enThemeConfig
+    }
   },
 
 })

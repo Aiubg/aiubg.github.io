@@ -1,10 +1,6 @@
 const navOptions =[{
   text: "前端",
   link: "/前端/JavaScript进阶/第一天",
-},
-{
-  text: "课程笔记",
-  link: "/课程笔记/燃烧学/选择题",
 }
 ]
 const sidebarOptions = {
@@ -18,14 +14,15 @@ const sidebarOptions = {
         { text: "第四天", link: "/前端/JavaScript进阶/第四天" },
       ],
     },
-  ],
-  "/课程笔记/": [
     {
-      text: "燃烧学",
+      text: "Vue 入门",
       items: [
-        {text: "选择题", link: "/课程笔记/燃烧学/选择题"},
-        {text: "简答题", link: "/课程笔记/燃烧学/简答题"},
-        {text: "计算题", link: "/课程笔记/燃烧学/计算题"},
+        { text: "介绍", link: "/前端/Vue入门/01-介绍" },
+        { text: "安装", link: "/前端/Vue入门/02-安装" },
+        { text: "组件", link: "/前端/Vue入门/03-组件" },
+        { text: "模板语法", link: "/前端/Vue入门/04-模板语法" },
+        { text: "响应式数据", link: "/前端/Vue入门/05-响应式数据" },
+        { text: "组合式API", link: "/前端/Vue入门/06-组合式API" },
       ],
     },
   ],
