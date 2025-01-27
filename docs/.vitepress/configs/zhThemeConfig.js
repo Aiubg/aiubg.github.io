@@ -1,28 +1,17 @@
 const navOptions =[{
-  text: "前端",
-  link: "/前端/JavaScript进阶/第一天",
+  text: "Vue.js",
+  link: "/Vue.js/Vue入门/01-从零开始理解Vue3",
 }
 ]
 const sidebarOptions = {
-  "/前端/": [
-    {
-      text: "JavaScript进阶",
-      items: [
-        { text: "第一天", link: "/前端/JavaScript进阶/第一天" },
-        { text: "第二天", link: "/前端/JavaScript进阶/第二天" },
-        { text: "第三天", link: "/前端/JavaScript进阶/第三天" },
-        { text: "第四天", link: "/前端/JavaScript进阶/第四天" },
-      ],
-    },
+  "/Vue.js/": [
     {
       text: "Vue 入门",
       items: [
-        { text: "介绍", link: "/前端/Vue入门/01-介绍" },
-        { text: "安装", link: "/前端/Vue入门/02-安装" },
-        { text: "组件", link: "/前端/Vue入门/03-组件" },
-        { text: "模板语法", link: "/前端/Vue入门/04-模板语法" },
-        { text: "响应式数据", link: "/前端/Vue入门/05-响应式数据" },
-        { text: "组合式API", link: "/前端/Vue入门/06-组合式API" },
+        { text: "从零开始理解Vue3", link: "/Vue.js/Vue入门/01-从零开始理解Vue3" },
+        { text: "组件系统与生命周期", link: "/Vue.js/Vue入门/02-组件系统与生命周期" },
+        { text: "组合式API与响应式进阶", link: "/Vue.js/Vue入门/03-组合式API与响应式进阶" },
+        { text: "路由与状态管理", link: "/Vue.js/Vue入门/04-路由与状态管理" }
       ],
     },
   ],
