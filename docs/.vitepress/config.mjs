@@ -6,6 +6,7 @@ const vitePressConfigs = defineConfig({
   title: "NoteNest",
   description: "我的学习笔记",
   lang: "zh-CN",
+  base: "/NoteNest/",
   srcDir: "src",
   base: "/NoteNest/",
   markdown: {
