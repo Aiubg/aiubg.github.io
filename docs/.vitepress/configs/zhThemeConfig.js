@@ -1,6 +1,14 @@
-const navOptions =[{
+const navOptions = [{
   text: "Vue.js",
   link: "/Vue.js/Vue入门/01-从零开始理解Vue3",
+},
+{
+  text: '考研数学',
+  items: [
+    { text: '高等数学', link: '/考研数学/高等数学' },
+    { text: '概率论', link: '/考研数学/概率论' },
+    { text: '线性代数', link: '/考研数学/线性代数' }
+  ]
 }
 ]
 const sidebarOptions = {
@@ -15,6 +23,7 @@ const sidebarOptions = {
       ],
     },
   ],
+
 }
 const socialLinkOptions = [{ icon: "github", link: "https://github.com/Aiubg" }]
 const themeConfig = {
