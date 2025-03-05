@@ -23,6 +23,14 @@ const sidebarOptions = {
       ],
     },
   ],
+  "/高等数学/":[
+    {
+      text: "高等数学",
+      items: [
+        { text: "数学分析", link: "/考研数学/高等数学/1.md" },
+      ],
+    },
+  ]
 
 }
 const socialLinkOptions = [{ icon: "github", link: "https://github.com/Aiubg" }]

@@ -6,16 +6,15 @@ const vitePressConfigs = defineConfig({
   title: "NoteNest",
   description: "我的学习笔记",
   lang: "zh-CN",
-  base: "/NoteNest/",
+  base: "/",
   srcDir: "src",
-  base: "/NoteNest/",
   markdown: {
     math: true,
     image: {
       lazyLoading: true,
     },
   },
-  head: [["link", { rel: "icon", href: "/NoteNest/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig:{
   },
   // 多语言配置
