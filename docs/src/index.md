@@ -10,7 +10,7 @@ hero:
       link: "/Vue.js/Vue入门/01-从零开始理解Vue3"
     - theme: alt
       text: 关于
-      link: /api-examples
+      link: /about
   image:
     src: /logo.png
 features:
