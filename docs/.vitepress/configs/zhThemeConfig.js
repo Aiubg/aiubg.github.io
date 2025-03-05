@@ -5,7 +5,7 @@ const navOptions = [{
 {
   text: '考研数学',
   items: [
-    { text: '高等数学', link: '/考研数学/高等数学/1' },
+    { text: '高等数学', link: '/考研数学/高等数学/函数' },
     { text: '概率论', link: '/考研数学/概率论' },
     { text: '线性代数', link: '/考研数学/线性代数' }
   ]
@@ -27,7 +27,7 @@ const sidebarOptions = {
     {
       text: "高等数学",
       items: [
-        { text: "数学分析", link: "/考研数学/高等数学/1.md" },
+        { text: "数学分析", link: "/考研数学/高等数学/函数" },
       ],
     },
   ]
