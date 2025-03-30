@@ -9,6 +9,10 @@ const navOptions = [{
     { text: '概率论', link: '/考研数学/概率论' },
     { text: '线性代数', link: '/考研数学/线性代数' }
   ]
+},{
+  text: "考研规划",
+  link: "/考研规划/考研规划",
+  target: "_blank",
 }
 ]
 const sidebarOptions = {
