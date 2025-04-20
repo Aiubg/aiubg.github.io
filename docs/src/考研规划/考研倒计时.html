@@ -1,4 +1,302 @@
-<style>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考研倒计时</title>
 
-  
-</style>
+    <style>
+        /* 通用重置和基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 使用常见系统字体 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* 确保body至少占满整个视口高度 */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* 炫酷渐变背景 */
+            color: #fff; /* 默认文本颜色 */
+            text-align: center;
+            overflow: hidden; /* 防止背景动画溢出 */
+            animation: gradientAnimation 10s ease infinite alternate; /* 背景动画 */
+            background-size: 200% 200%; /* 确保渐变区域够大以支持动画 */
+        }
+
+        /* 容器样式 */
+        .container {
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+            border-radius: 15px; /* 圆角 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* 阴影 */
+            backdrop-filter: blur(15px); /* 毛玻璃效果 (部分浏览器支持) */
+            -webkit-backdrop-filter: blur(15px); /* Safari 支持 */
+            max-width: 900px; /* 最大宽度 */
+            width: 95%; /* 容器宽度 */
+            margin: 20px auto; /* 上下外边距和居中 */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* 添加一个细微的边框 */
+        }
+
+        /* 标题样式 */
+        .title {
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* 文本阴影 */
+        }
+
+        /* 倒计时容器样式 */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* 允许倒计时项换行 */
+            gap: 25px; /* 项目之间的间距 */
+            margin-bottom: 35px;
+        }
+
+        /* 倒计时项样式 */
+        .countdown-item {
+            flex: 1 1 160px; /* 弹性布局，基础宽度160px，允许缩小放大 */
+            background: rgba(255, 255, 255, 0.15); /* 半透明白色背景 */
+            border-radius: 12px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column; /* 数字和标签垂直排列 */
+            align-items: center;
+            min-width: 120px; /* 最小宽度 */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* 添加过渡效果 */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* 倒计时项边框 */
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-8px) rotate(1deg); /* 鼠标悬停时向上移动并轻微旋转 */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); /* 鼠标悬停时加深阴影 */
+            background: rgba(255, 255, 255, 0.25); /* 鼠标悬停时背景更亮 */
+        }
+
+
+        /* 数字样式 */
+        .number {
+            font-size: 4.5em; /* 大号字体 */
+            font-weight: bold;
+            color: #ffffff; /* 数字颜色 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 8px;
+        }
+
+        /* 标签样式 (天、小时等) */
+        .label {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9); /* 标签颜色 */
+            text-transform: uppercase; /* 单位大写 (可选) */
+            letter-spacing: 1px;
+        }
+
+        /* 激励性文字样式 */
+        .motto {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 25px;
+            font-style: italic; /* 斜体 */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+
+        /* 背景动画关键帧 */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+
+        /* 响应式设计 - 媒体查询 */
+
+        /* 中等屏幕设备，如平板 (小于 992px) */
+        @media (max-width: 992px) {
+             .title {
+                font-size: 2.4em;
+            }
+            .countdown {
+                gap: 20px;
+            }
+            .countdown-item {
+                flex: 1 1 140px;
+                padding: 20px 10px;
+            }
+             .number {
+                font-size: 4em;
+            }
+             .label {
+                font-size: 1em;
+            }
+             .motto {
+                 font-size: 1.1em;
+            }
+        }
+
+
+        /* 小屏幕设备，如手机 (小于 768px) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            .title {
+                font-size: 2em; /* 减小标题字体 */
+                margin-bottom: 20px;
+            }
+
+            .countdown {
+                gap: 15px; /* 减小倒计时项间距 */
+                margin-bottom: 30px;
+            }
+
+            .countdown-item {
+                flex: 1 1 calc(50% - 10px); /* 小屏幕上每行两个，减去间距 */
+                padding: 18px 8px;
+                min-width: unset; /* 取消最小宽度限制 */
+            }
+
+            .number {
+                font-size: 3.5em; /* 减小数字字体 */
+            }
+
+            .label {
+                font-size: 0.9em; /* 减小标签字体 */
+            }
+
+            .motto {
+                 font-size: 1em; /* 减小座右铭字体 */
+            }
+        }
+
+        /* 更小的屏幕设备 (小于 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px; /* 减小容器内边距 */
+            }
+
+             .title {
+                font-size: 1.7em; /* 进一步减小标题字体 */
+                margin-bottom: 15px;
+            }
+             .countdown {
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+
+             .countdown-item {
+                flex: 1 1 100%; /* 更小的屏幕上每个倒计时项占满一行 */
+                padding: 15px 10px;
+            }
+
+            .number {
+                font-size: 3em; /* 进一步减小数字字体 */
+            }
+             .label {
+                font-size: 0.85em; /* 进一步减小标签字体 */
+            }
+             .motto {
+                 font-size: 0.95em;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">距离2025年考研还有</h1>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="number" id="days">00</span>
+                <span class="label">天</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="hours">00</span>
+                <span class="label">小时</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="minutes">00</span>
+                <span class="label">分钟</span>
+            </div>
+            <div class="countdown-item">
+                <span class="number" id="seconds">00</span>
+                <span class="label">秒</span>
+            </div>
+        </div>
+        <p class="motto">愿你合上笔盖的刹那，有战士收刀入鞘的骄傲！</p>
+    </div>
+
+    <script>
+        // 1. 定义考研目标日期
+        // 请将 '2025-12-20T00:00:00' 替换为你实际的考研日期和时间。
+        // 格式为 'YYYY-MM-DDTHH:mm:ss'，T后面是时间，不写时间默认是当天零点。
+        const targetDate = new Date('2025-12-20T00:00:00').getTime();
+
+        // 2. 获取需要更新的 DOM 元素
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const titleEl = document.querySelector('.title'); // 获取标题元素
+        const mottoEl = document.querySelector('.motto'); // 获取座右铭元素
+
+        // 3. 创建一个函数来计算并更新倒计时
+        function updateCountdown() {
+            // 获取当前时间
+            const now = new Date().getTime();
+
+            // 计算剩余时间（毫秒）
+            const timeLeft = targetDate - now;
+
+            // 定义时间单位的毫秒值
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            // 检查是否已过目标日期
+            if (timeLeft <= 0) {
+                // 倒计时结束
+                daysEl.innerText = '00';
+                hoursEl.innerText = '00';
+                minutesEl.innerText = '00';
+                secondsEl.innerText = '00';
+                if (titleEl) titleEl.innerText = '考研已结束！';
+                 if (mottoEl) mottoEl.innerText = '祝你金榜题名！'; // 或其他结束语
+                clearInterval(countdownInterval); // 停止计时器
+                return; // 结束函数执行
+            }
+
+            // 计算剩余的天、小时、分钟、秒
+            const days = Math.floor(timeLeft / day);
+            const hours = Math.floor((timeLeft % day) / hour); // 剩余天数后的小时数
+            const minutes = Math.floor((timeLeft % hour) / minute); // 剩余小时数后的分钟数
+            const seconds = Math.floor((timeLeft % minute) / second); // 剩余分钟数后的秒数
+
+            // 更新页面上的数字，并确保总是两位数显示 (例如：5 显示为 05)
+            daysEl.innerText = String(days).padStart(2, '0');
+            hoursEl.innerText = String(hours).padStart(2, '0');
+            minutesEl.innerText = String(minutes).padStart(2, '0');
+            secondsEl.innerText = String(seconds).padStart(2, '0');
+        }
+
+        // 4. 每秒更新一次倒计时
+        // 使用 setInterval 函数，每隔 1000 毫秒 (1秒) 调用一次 updateCountdown 函数
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // 5. 页面加载后立即执行一次更新，避免等待第一秒
+        updateCountdown();
+    </script>
+
+</body>
+</html>
