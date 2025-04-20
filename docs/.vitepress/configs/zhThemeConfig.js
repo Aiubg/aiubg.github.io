@@ -13,6 +13,15 @@ const navOptions = [{
   text: "考研规划",
   link: "/考研规划/考研规划",
   target: "_blank",
+},
+{
+  text: "考研规划",
+  link: "/考研规划/考研倒计时.html",
+  target: "_blank",
+},
+{
+  text: "词汇积累",
+  link: "/词汇积累/词汇积累",
 }
 ]
 const sidebarOptions = {
