@@ -15,7 +15,7 @@ const navOptions = [{
   target: "_blank",
 },
 {
-  text: "考研规划",
+  text: "考研倒计时",
   link: "/考研规划/考研倒计时.html",
   target: "_blank",
 },
