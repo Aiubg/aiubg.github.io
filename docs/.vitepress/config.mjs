@@ -1,6 +1,5 @@
 import { defineConfig } from "vitepress"
-import zhThemeConfig from "./configs/zhThemeConfig"
-import enThemeConfig from "./configs/enThemeConfig"
+import zhThemeConfig from "./config/zhThemeConfig"
 
 const vitePressConfigs = defineConfig({
   title: "NoteNest",
@@ -23,12 +22,7 @@ const vitePressConfigs = defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       themeConfig:zhThemeConfig
-    },
-    // en: {
-    //   label: 'English',
-    //   lang: 'en',
-    //   themeConfig:enThemeConfig
-    // }
+    }
   },
 
 })

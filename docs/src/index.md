@@ -12,7 +12,7 @@ hero:
       text: 关于
       link: /about
   image:
-    src: /logo.png
+    src: /logo.webp
 features:
   - title: 内容全面
     icon: 📖

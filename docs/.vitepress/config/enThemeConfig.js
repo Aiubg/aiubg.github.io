@@ -1,32 +1,10 @@
-const navOptions = [{
-  text: "Frontend",
-  link: "/frontend/JavaScriptAdvanced/Day1",
-}]
+const navOptions = []
 const sidebarOptions = {
-  "/frontend/": [
-    {
-      text: "JavaScript Advanced",
-      items: [
-        { text: "Day 1", link: "/frontend/JavaScriptAdvanced/Day1" },
-        { text: "Day 2", link: "/frontend/JavaScriptAdvanced/Day2" },
-        { text: "Day 3", link: "/frontend/JavaScriptAdvanced/Day3" },
-        { text: "Day 4", link: "/frontend/JavaScriptAdvanced/Day4" },
-      ],
-    },
-    {
-      text: "Vue Basics",
-      items: [
-        { text: "Day 1", link: "/frontend/Vue/1" },
-        { text: "Day 2", link: "/frontend/Vue/Day2" },
-        { text: "Day 3", link: "/frontend/Vue/Day3" },
-        { text: "Day 4", link: "/frontend/Vue/Day4" },
-      ],
-    },
-  ],
+ 
 }
 const socialLinkOptions = [{ icon: "github", link: "https://github.com/Aiubg" }]
 const themeConfig = {
-  logo: "/icon.png",
+  logo: "/icon.webp",
   langMenuLabel: "Languages",
   returnToTopLabel: "Back to top",
   sidebarMenuLabel: "Menu",
