@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: "/Vue.js/Vue入门/01-从零开始理解Vue3"
+      link: /
     - theme: alt
       text: 关于
       link: /about
