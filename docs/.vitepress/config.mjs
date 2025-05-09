@@ -156,10 +156,10 @@ const vitePressConfigs = defineConfig({
     ["meta", { name: "twitter:image", content: "/logo.webp" }], // 使用 index.md 中的图片
   ],
   themeConfig: {
-    logo: "/icon.webp",
     search: {
       provider: "local",
     },
+    logo: "/icon.webp",
   },
   // 多语言配置
   locales: {
@@ -179,6 +179,7 @@ const vitePressConfigs = defineConfig({
         },
         outline: {
           label: "页面导航",
+          level: [2, 3, 4, 5,6],
         },
         search: {
           options: {
