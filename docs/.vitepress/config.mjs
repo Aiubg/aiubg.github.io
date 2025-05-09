@@ -1,3 +1,4 @@
+import { MermaidMarkdown ,MermaidPlugin} from "vitepress-plugin-mermaid"
 import { defineConfig } from "vitepress"
 
 const sidebarOptions = {
@@ -87,6 +88,22 @@ const sidebarOptions = {
       items: [],
     },
   ],
+  "/考研英语/": [
+    {
+      text: "考研英语",
+      items: [
+        {
+          text: "如何表达一件事——简单句",
+          items: [
+            {
+              text: "简单句的核心",
+              link: "/考研英语/如何表达一件事——简单句/简单句的核心.md",
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 const vitePressConfigs = defineConfig({
   title: "NoteNest",
@@ -98,6 +115,18 @@ const vitePressConfigs = defineConfig({
     image: {
       lazyLoading: true,
     },
+    config: (md) => {
+      md.use(MermaidMarkdown)
+    },
+  },
+  vite: {
+    plugins: [MermaidPlugin()],
+    optimizeDeps:{
+      include: ["mermaid"],
+    },
+    ssr:{
+      noExternal: ["mermaid"],
+    }
   },
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
@@ -177,6 +206,10 @@ const vitePressConfigs = defineConfig({
             text: "考研规划",
             link: "/考研规划/考研规划",
             target: "_blank",
+          },
+          {
+            text: "考研英语",
+            link: "/考研英语/考研英语介绍",
           },
         ],
         sidebar: sidebarOptions,
