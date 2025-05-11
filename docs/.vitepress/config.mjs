@@ -1,6 +1,29 @@
 import { MermaidMarkdown, MermaidPlugin } from "vitepress-plugin-mermaid"
 import { defineConfig } from "vitepress"
 
+const navOptions = [
+  {
+    text: "考研数学",
+    items: [
+      {
+        text: "高等数学",
+        link: "/考研数学/高等数学/高等数学介绍",
+      },
+      { text: "概率论", link: "/考研数学/概率论/" },
+      { text: "线性代数", link: "/考研数学/线性代数/" },
+    ],
+  },
+  {
+    text: "考研规划",
+    link: "/考研规划/考研规划",
+    target: "_blank",
+  },
+  {
+    text: "考研英语",
+    link: "/考研英语/考研英语介绍",
+  },
+]
+
 const sidebarOptions = {
   "/考研数学/高等数学/": [
     {
@@ -143,17 +166,15 @@ const vitePressConfigs = defineConfig({
   },
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
-    // Open Graph
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:title", content: "NoteNest" }],
     ["meta", { property: "og:description", content: "我的学习笔记" }],
-    ["meta", { property: "og:image", content: "/logo.webp" }], // 使用 index.md 中的图片
-    ["meta", { property: "og:url", content: "/" }], // 假设部署在根目录
-    // Twitter Card
+    ["meta", { property: "og:image", content: "/logo.webp" }],
+    ["meta", { property: "og:url", content: "/" }],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:title", content: "NoteNest" }],
     ["meta", { name: "twitter:description", content: "我的学习笔记" }],
-    ["meta", { name: "twitter:image", content: "/logo.webp" }], // 使用 index.md 中的图片
+    ["meta", { name: "twitter:image", content: "/logo.webp" }],
   ],
   themeConfig: {
     search: {
@@ -179,7 +200,7 @@ const vitePressConfigs = defineConfig({
         },
         outline: {
           label: "页面导航",
-          level: [2, 3, 4, 5,6],
+          level: [2,4],
         },
         search: {
           options: {
@@ -204,32 +225,11 @@ const vitePressConfigs = defineConfig({
             },
           },
         },
-        nav: [
-          {
-            text: "考研数学",
-            items: [
-              {
-                text: "高等数学",
-                link: "/考研数学/高等数学/高等数学介绍",
-              },
-              { text: "概率论", link: "/考研数学/概率论/" },
-              { text: "线性代数", link: "/考研数学/线性代数/" },
-            ],
-          },
-          {
-            text: "考研规划",
-            link: "/考研规划/考研规划",
-            target: "_blank",
-          },
-          {
-            text: "考研英语",
-            link: "/考研英语/考研英语介绍",
-          },
-        ],
+        nav: navOptions,
         sidebar: sidebarOptions,
         socialLinks: [{ icon: "github", link: "https://github.com/Aiubg" }],
       },
-    },
+    }
   },
 })
 
