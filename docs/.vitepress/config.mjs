@@ -32,6 +32,7 @@ const sidebarOptions = {
       items: [
         {
           text: "函数 极限 连续",
+          link: "/考研数学/高等数学/函数 极限 连续/函数 极限 连续.md",
           items: [
             {
               text: "函数",
