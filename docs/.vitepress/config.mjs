@@ -201,7 +201,7 @@ const vitePressConfigs = defineConfig({
         },
         outline: {
           label: "页面导航",
-          level: [2,4],
+          level: [2,3],
         },
         search: {
           options: {
