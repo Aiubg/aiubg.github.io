@@ -14,13 +14,13 @@ const navOptions = [
     ],
   },
   {
+    text: "考研英语",
+    link: "/考研英语/考研英语介绍",
+  },
+  {
     text: "考研规划",
     link: "/考研规划/考研规划",
     target: "_blank",
-  },
-  {
-    text: "考研英语",
-    link: "/考研英语/考研英语介绍",
   },
 ]
 
