@@ -18,9 +18,8 @@ const navOptions = [
     link: "/考研英语/考研英语介绍",
   },
   {
-    text: "考研规划",
-    link: "/考研规划/考研规划",
-    target: "_blank",
+    text: "期末",
+    link: "/other/热力发电厂",
   },
 ]
 
